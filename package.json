@@ -4,7 +4,7 @@
   "description": "A simple Telegram Bot to run shell commands remotely",
   "main": "index.js",
   "scripts": {
-    "run":"node index.js",
+    "start":"node index.js",
     "test": "test"
   },
   "author": "marknote",

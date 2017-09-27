@@ -23,7 +23,7 @@ bot.on('text', (msg) => {
     const shell = spawn(words[0],args);
     
     shell.stdout.on('data', (data) => {
-        msg.reply.text(`stdout: ${data}`);
+        msg.reply.text(`stdout:\n ${data}`);
     });
     
     shell.stderr.on('data', (data) => {
