@@ -1,0 +1,15 @@
+{
+  "name": "teleshellbot",
+  "version": "1.0.0",
+  "description": "A simple Telegram Bot to run shell commands remotely",
+  "main": "index.js",
+  "scripts": {
+    "run":"node index.js",
+    "test": "test"
+  },
+  "author": "marknote",
+  "license": "MIT",
+  "dependencies": {
+    "telebot": "^1.2.3"
+  }
+}
