@@ -4,6 +4,8 @@ const bot = new TeleBot(config.botToken);
 const { spawn } = require('child_process');
 const adminUsers = config.adminUsers;
 
+
+
 bot.on('text', (msg) => {
     const id = msg.from.id;
     msg.reply.text('$:'+msg.text);
@@ -20,19 +22,25 @@ bot.on('text', (msg) => {
     } 
     console.log('args:'+args);
 
-    const shell = spawn(words[0],args);
+    const shell = spawn(words[0],args).on('error', function( err ){ 
+        		msg.reply.text('error while executing:'+words[0]);
+        		msg.reply.text(err);
+        	});
     
-    shell.stdout.on('data', (data) => {
-        msg.reply.text(`stdout:\n ${data}`);
-    });
+    if(shell){
     
-    shell.stderr.on('data', (data) => {
-        msg.reply.text(`stderr: ${data}`);
-    });
+    	shell.stdout.on('data', (data) => {
+        	msg.reply.text(`stdout:\n ${data}`);
+    	});
     
-    shell.on('close', (code) => {
-        msg.reply.text(`shell exited with code ${code}`);
-    });
+    	shell.stderr.on('data', (data) => {
+        	msg.reply.text(`stderr: ${data}`);
+    	});
+    
+    	shell.on('close', (code) => {
+        	msg.reply.text(`shell exited with code ${code}`);
+    	});
+    }
 
 }
 );
