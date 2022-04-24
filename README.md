@@ -1,6 +1,6 @@
 # TeleShellBot
 A simple Telegram Bot to run shell commands remotely, so that you can maintain your server from mobile phones!
-![](screens/demo.gif)
+![demo](https://cdn.jsdelivr.net/gh/marknote/TeleShellBot/screens/demo.gif)
 
 ## Install
 Download or clone this repo, then
@@ -8,8 +8,9 @@ Download or clone this repo, then
 npm install
 ```
 ## Config
-Follow [Telegram instructions](https://telegram.org/blog/bot-revolution) to create a bot
-Then put your telegram user ID and bot token in `config.js`:
+- Follow [Telegram instructions](https://telegram.org/blog/bot-revolution) to create a bot, and you will get bot token.
+- [Find you user ID](https://medium.com/@tabul8tor/how-to-find-your-telegram-user-id-6878d54acafa)
+- Then put your telegram user ID and bot token in `config.js`:
 ```javascript
 module.exports = {
     config:function(){
@@ -25,7 +26,7 @@ module.exports = {
 ```
 ## Run
 ```
-npm start
+npm run start
 ```
 or 
 ```
